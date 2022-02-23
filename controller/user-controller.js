@@ -51,7 +51,7 @@ function getAllUsers(req, res) {
 function deleteUser(req, res) {
     
 
-    let userId=req.paramse.userId
+    let userId=req.params.userId
     UserModel.deleteOne({"_id":userId},(error,data)=>{
         if (error) {
             res.json({
@@ -76,7 +76,7 @@ function updateUser(req, res) {
      phoneNumber:req.body.phoneNumber,
      role:req.body.role
     };
-       UserModel.updateOne({'_id':req.paramse.userId},{$set:user},(error,data)=>{
+       UserModel.updateOne({'_id':req.params.userId},{$set:user},(error,data)=>{
         if (error) {
             res.json({
               msg: "Somthing went Wrong.....",

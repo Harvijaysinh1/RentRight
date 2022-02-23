@@ -31,7 +31,7 @@ function addVehicle(req, res) {
 function getAllVehicle(req,res){
     
 
-    VehicleModel.find().populate('user').exec((error,data)=>{
+    VehicleModel.find().populate('user','firstName').exec((error,data)=>{
         if(error){
             res.json({
                 msg:'erroe-------',
@@ -73,10 +73,11 @@ function deleteVehicle(req,res){
 function updateVehicle(req,res){
 
     let vehicle={
-        numberplate:req.body.numberPlate,
+        numberPlate:req.body.numberPlate,
         model:req.body.model,
         color:req.body.color,
         costPerKm:req.body.costPerKm,
+        user:req.body.user
 
 
     }

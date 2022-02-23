@@ -5,6 +5,7 @@ const sessionController=require("./controller/session-controller")
 const roleController=require("./controller/role-controller")
 const userController=require("./controller/user-controller")
 const vehicleController=require("./controller/vehicle-controller")
+const paymentController=require("./controller/payment-controller")
 
 
 const port=3000;
@@ -61,6 +62,13 @@ app.post('/vehicles',vehicleController.addVehicle)
 app.get('/vehicles',vehicleController.getAllVehicle)
 app.delete('/vehicles/:vehicleId',vehicleController.deleteVehicle)
 app.put('/vehicles/:vehicleId',vehicleController.updateVehicle)
+
+//payment
+
+app.post('/payments',paymentController.addPayment)
+app.get('/payments',paymentController.getAllPayment)
+app.delete('/payments/:paymentId',paymentController.deletePayment)
+app.put('/payments/:paymentId',paymentController.updatePayment)
 
 app.listen(port,()=>{
     console.log(`hello server started on ${port} `);
