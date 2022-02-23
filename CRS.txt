@@ -1,0 +1,7 @@
+CRS: Car Rental System
+
+It is a web based system for a company that rents out cars.This system help company to make their services available to the public through the internet.This system also help to keep records about services.
+
+(Thomas Pretty) 
+
+Existing Website: Revv, Zoomcar, Mychoize, Driverzy, Rentcars
