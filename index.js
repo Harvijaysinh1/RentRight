@@ -4,6 +4,7 @@ const mongoose=require('mongoose');
 const sessionController=require("./controller/session-controller")
 const roleController=require("./controller/role-controller")
 const userController=require("./controller/user-controller")
+const vehicleController=require("./controller/vehicle-controller")
 
 
 const port=3000;
@@ -54,7 +55,12 @@ app.get('/users',userController.getAllUsers)
 app.delete('/users/:userId',userController.deleteUser)
 app.put('/users/:userId',userController.updateUser)
 
+//vehicle
 
+app.post('/vehicles',vehicleController.addVehicle)
+app.get('/vehicles',vehicleController.getAllVehicle)
+app.delete('/vehicles/:vehicleId',vehicleController.deleteVehicle)
+app.put('/vehicles/:vehicleId',vehicleController.updateVehicle)
 
 app.listen(port,()=>{
     console.log(`hello server started on ${port} `);
