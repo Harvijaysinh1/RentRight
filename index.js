@@ -7,6 +7,8 @@ const userController=require("./controller/user-controller")
 const vehicleController=require("./controller/vehicle-controller")
 const paymentController=require("./controller/payment-controller")
 const insuranceController=require("./controller/insurance-controller")
+const bookingController=require("./controller/booking-controller")
+const rentCostController=require("./controller/rentCost-controller")
 
 
 const port=3000;
@@ -78,7 +80,19 @@ app.get('/insurances',insuranceController.getAllInsurance)
 app.delete('/insurances/:insuranceId',insuranceController.deleteIncurance)
 app.put('/insurances/:insuranceId',insuranceController.updateInsurance)
 
+//booking
 
+app.post('/bookings',bookingController.addBooking)
+app.get('/bookings',bookingController.getAllBooking)
+app.delete('/bookings/:bookingId',bookingController.deleteBooking)
+app.put('/bookings/:bookingId',bookingController.updateBooking)
+
+//rentCost
+
+app.post('/rentCosts',rentCostController.addRentCost)
+app.get('/rentCosts',rentCostController.getAllRentCost)
+app.delete('/rentCosts/:rentCostId',rentCostController.deleteRentCost)
+app.put('/rentCosts/:rentCostId',rentCostController.updateRentCost)
 
 app.listen(port,()=>{
     console.log(`hello server started on ${port} `);
