@@ -20,7 +20,7 @@ module.exports.getAllRentCost=(req,res)=>{
     RentCostModel.find().populate('vehicle').exec((error,data)=>{
         if(error){
             res.json({msg:'error-----',status:-1,data:error})
-        }else{res.json({msg:'all incurance ----',status:200,data:data})}
+        }else{res.json({msg:'all rentCost ----',status:200,data:data})}
         
 
     })

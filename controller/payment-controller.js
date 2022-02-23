@@ -4,7 +4,8 @@ module.exports.addPayment=(req,res)=>{
     const payment=new PaymentModel({
         vehicle:req.body.vehicle,
         paymentDate:req.body.paymentDate,
-        status:req.body.status
+        status:req.body.status,
+        bill:req.body.bill
     })
 
     payment.save((error,data)=>{
@@ -38,7 +39,8 @@ module.exports.updatePayment=(req,res)=>{
     let payment={
         vehicle:req.body.vehicle,
         paymentDate:req.body.paymentDate,
-        status:req.body.status
+        status:req.body.status,
+        bill:req.body.bill
 
     }
     PaymentModel.updateOne({_id:req.params.paymentId},{$set:payment},(error)=>{

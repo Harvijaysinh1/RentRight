@@ -21,7 +21,7 @@ module.exports.getAllBooking=(req,res)=>{
     BookingModel.find().populate('rentCost').exec((error,data)=>{
         if(error){
             res.json({msg:'error-----',status:-1,data:error})
-        }else{res.json({msg:'all incurance ----',status:200,data:data})}
+        }else{res.json({msg:'all booking ----',status:200,data:data})}
         
 
     })
