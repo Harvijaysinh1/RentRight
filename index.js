@@ -6,6 +6,7 @@ const roleController=require("./controller/role-controller")
 const userController=require("./controller/user-controller")
 const vehicleController=require("./controller/vehicle-controller")
 const paymentController=require("./controller/payment-controller")
+const insuranceController=require("./controller/insurance-controller")
 
 
 const port=3000;
@@ -69,6 +70,15 @@ app.post('/payments',paymentController.addPayment)
 app.get('/payments',paymentController.getAllPayment)
 app.delete('/payments/:paymentId',paymentController.deletePayment)
 app.put('/payments/:paymentId',paymentController.updatePayment)
+
+//insurance
+
+app.post('/insurances',insuranceController.addInsurance)
+app.get('/insurances',insuranceController.getAllInsurance)
+app.delete('/insurances/:insuranceId',insuranceController.deleteIncurance)
+app.put('/insurances/:insuranceId',insuranceController.updateInsurance)
+
+
 
 app.listen(port,()=>{
     console.log(`hello server started on ${port} `);
